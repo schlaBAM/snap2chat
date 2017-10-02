@@ -14,6 +14,7 @@
 		A939E7B91F81DCB200CF8900 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A939E7B71F81DCB200CF8900 /* LaunchScreen.storyboard */; };
 		A9F8B3021F81F3F20049FC82 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9F8B3011F81F2D30049FC82 /* GoogleService-Info.plist */; };
 		A9F8B3041F81F9F50049FC82 /* SnapsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F8B3031F81F9F50049FC82 /* SnapsVC.swift */; };
+		A9F8B3061F81FCFA0049FC82 /* CreateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F8B3051F81FCFA0049FC82 /* CreateVC.swift */; };
 		B470F0F83EA13BF907E76D5D /* Pods_Snap2Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA67B8B9D5E50567D691F878 /* Pods_Snap2Chat.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 		A939E7BA1F81DCB200CF8900 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9F8B3011F81F2D30049FC82 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A9F8B3031F81F9F50049FC82 /* SnapsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapsVC.swift; sourceTree = "<group>"; };
+		A9F8B3051F81FCFA0049FC82 /* CreateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateVC.swift; sourceTree = "<group>"; };
 		CCD56D0F9A747116B7358505 /* Pods-Snap2Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snap2Chat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Snap2Chat/Pods-Snap2Chat.debug.xcconfig"; sourceTree = "<group>"; };
 		DA67B8B9D5E50567D691F878 /* Pods_Snap2Chat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Snap2Chat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				A939E7AE1F81DCB200CF8900 /* AppDelegate.swift */,
+				A9F8B3051F81FCFA0049FC82 /* CreateVC.swift */,
 				A939E7B01F81DCB200CF8900 /* SignInViewController.swift */,
 				A9F8B3031F81F9F50049FC82 /* SnapsVC.swift */,
 				A939E7B21F81DCB200CF8900 /* Main.storyboard */,
@@ -220,6 +223,7 @@
 			files = (
 				A939E7B11F81DCB200CF8900 /* SignInViewController.swift in Sources */,
 				A939E7AF1F81DCB200CF8900 /* AppDelegate.swift in Sources */,
+				A9F8B3061F81FCFA0049FC82 /* CreateVC.swift in Sources */,
 				A9F8B3041F81F9F50049FC82 /* SnapsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

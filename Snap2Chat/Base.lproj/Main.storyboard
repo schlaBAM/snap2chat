@@ -28,7 +28,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6yE-U4-rW0">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="fuck@fuck.com" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6yE-U4-rW0">
                                 <rect key="frame" x="112.5" y="193" width="150" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="hkK-6r-UVe"/>
@@ -37,7 +37,7 @@
                                 <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oXp-nL-DR7">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="fuckfuckfuck" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oXp-nL-DR7">
                                 <rect key="frame" x="112.5" y="257" width="150" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="O6z-SC-Brt"/>
@@ -89,14 +89,15 @@
                         <viewLayoutGuide key="safeArea" id="0tA-jz-PDa"/>
                     </view>
                     <navigationItem key="navigationItem" title="Your Snaps" id="9t0-iR-vh5">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="ye2-zm-ZiP"/>
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="76l-Xp-WJY">
                             <connections>
                                 <action selector="logoutTapped:" destination="a8J-dR-quF" id="7FG-hY-NSq"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="S9c-ee-0Kh">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="S9c-ee-0Kh">
                             <connections>
-                                <action selector="cameraTapped:" destination="a8J-dR-quF" id="mkp-79-rfg"/>
+                                <segue destination="1tC-GV-8XD" kind="show" id="k50-2F-xa6"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -104,6 +105,65 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ei6-lh-WNK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="948" y="134"/>
+        </scene>
+        <!--Create Snap-->
+        <scene sceneID="xLO-NI-Y0n">
+            <objects>
+                <viewController id="1tC-GV-8XD" customClass="CreateVC" customModule="Snap2Chat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Whu-6v-htv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tBb-eI-2DV">
+                                <rect key="frame" x="67" y="124" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="BK9-eF-YmB"/>
+                                    <constraint firstAttribute="height" constant="128" id="EhT-xj-Eor"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add Text" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GA8-aH-qQe">
+                                <rect key="frame" x="67.5" y="294" width="240" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O83-gX-uhn">
+                                <rect key="frame" x="164" y="354" width="46" height="30"/>
+                                <state key="normal" title="Create"/>
+                                <connections>
+                                    <action selector="createTapped:" destination="1tC-GV-8XD" eventType="touchUpInside" id="z3D-va-KoF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tBb-eI-2DV" firstAttribute="centerX" secondItem="Whu-6v-htv" secondAttribute="centerX" id="PNa-3T-jgd"/>
+                            <constraint firstItem="GA8-aH-qQe" firstAttribute="centerX" secondItem="Whu-6v-htv" secondAttribute="centerX" id="R21-Be-vxX"/>
+                            <constraint firstItem="GA8-aH-qQe" firstAttribute="top" secondItem="tBb-eI-2DV" secondAttribute="bottom" constant="42" id="U0P-dV-Hvu"/>
+                            <constraint firstItem="tBb-eI-2DV" firstAttribute="top" secondItem="zLb-mh-5pw" secondAttribute="top" constant="60" id="Vac-wG-Xxd"/>
+                            <constraint firstItem="O83-gX-uhn" firstAttribute="centerX" secondItem="Whu-6v-htv" secondAttribute="centerX" id="fnC-sb-o3f"/>
+                            <constraint firstItem="O83-gX-uhn" firstAttribute="top" secondItem="GA8-aH-qQe" secondAttribute="bottom" constant="30" id="rF2-6h-1QC"/>
+                            <constraint firstItem="GA8-aH-qQe" firstAttribute="width" secondItem="tBb-eI-2DV" secondAttribute="width" id="zYb-ap-7Xg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zLb-mh-5pw"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Create Snap" id="hDr-av-4Ph">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="hi1-73-Jlf">
+                            <connections>
+                                <action selector="cameraTapped:" destination="1tC-GV-8XD" id="nQU-7C-4Ub"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cameraButton" destination="hi1-73-Jlf" id="OAt-pS-60P"/>
+                        <outlet property="createButton" destination="O83-gX-uhn" id="LH6-P9-iyJ"/>
+                        <outlet property="imageView" destination="tBb-eI-2DV" id="kVf-CB-7vu"/>
+                        <outlet property="textField" destination="GA8-aH-qQe" id="eDJ-Y4-aRQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hSB-uG-cbh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1705" y="134"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="m3S-p9-K8U">

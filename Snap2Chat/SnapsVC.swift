@@ -24,11 +24,7 @@ class SnapsVC: UIViewController {
     }
     
     @IBAction func logoutTapped(_ sender: Any) {
-    }
-    
-    @IBAction func cameraTapped(_ sender: Any) {
-        imagePicker.sourceType = .camera
-        present(imagePicker, animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
 }
