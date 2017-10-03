@@ -20,7 +20,7 @@ class CreateVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        imagePicker.delegate = self
         // Do any additional setup after loading the view.
     }
 
