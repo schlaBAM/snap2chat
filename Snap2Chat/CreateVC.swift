@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseStorage
 
 class CreateVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -29,6 +30,18 @@ class CreateVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     }
     
     @IBAction func createTapped(_ sender: Any) {
+        createButton.isEnabled = false
+        let images = Storage.storage().reference().child("images")
+        let imageData = UIImagePNGRepresentation(imageView.image!)
+        images.child("images.png").putData(imageData!, metadata: nil) { (metadata, error) in
+            if error != nil {
+                print("Firebase storage upload error: \(error)")
+                self.createButton.isEnabled = true
+            } else {
+                print("Image upload successful")
+                self.performSegue(withIdentifier: "selectUserSegue", sender: nil)
+            }
+        }
     }
     
     @IBAction func cameraTapped(_ sender: Any) {
@@ -44,6 +57,10 @@ class CreateVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         imageView.image = image
         imageView.backgroundColor = .clear
         imagePicker.dismiss(animated: true, completion: nil)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
     }
     

@@ -149,6 +149,7 @@
                         <viewLayoutGuide key="safeArea" id="zLb-mh-5pw"/>
                     </view>
                     <navigationItem key="navigationItem" title="Create Snap" id="hDr-av-4Ph">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="GfM-av-8ZR"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="hi1-73-Jlf">
                             <connections>
                                 <action selector="cameraTapped:" destination="1tC-GV-8XD" id="nQU-7C-4Ub"/>
@@ -160,11 +161,27 @@
                         <outlet property="createButton" destination="O83-gX-uhn" id="LH6-P9-iyJ"/>
                         <outlet property="imageView" destination="tBb-eI-2DV" id="kVf-CB-7vu"/>
                         <outlet property="textField" destination="GA8-aH-qQe" id="eDJ-Y4-aRQ"/>
+                        <segue destination="ZYZ-dm-P17" kind="show" identifier="selectUserSegue" id="h3I-dN-iL4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hSB-uG-cbh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1705" y="134"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="5u4-GI-6I3">
+            <objects>
+                <viewController id="ZYZ-dm-P17" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ed7-ai-eY6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="8T3-VD-a1C"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YJw-wr-bLg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2490" y="134"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="m3S-p9-K8U">
