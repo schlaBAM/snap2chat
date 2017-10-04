@@ -12,6 +12,7 @@
 		A939E7B41F81DCB200CF8900 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A939E7B21F81DCB200CF8900 /* Main.storyboard */; };
 		A939E7B61F81DCB200CF8900 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A939E7B51F81DCB200CF8900 /* Assets.xcassets */; };
 		A939E7B91F81DCB200CF8900 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A939E7B71F81DCB200CF8900 /* LaunchScreen.storyboard */; };
+		A9B9D10B1F84B22A006894A2 /* ViewSnapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B9D10A1F84B22A006894A2 /* ViewSnapVC.swift */; };
 		A9F8B3021F81F3F20049FC82 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9F8B3011F81F2D30049FC82 /* GoogleService-Info.plist */; };
 		A9F8B3041F81F9F50049FC82 /* SnapsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F8B3031F81F9F50049FC82 /* SnapsVC.swift */; };
 		A9F8B3061F81FCFA0049FC82 /* CreateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F8B3051F81FCFA0049FC82 /* CreateVC.swift */; };
@@ -30,6 +31,7 @@
 		A939E7B51F81DCB200CF8900 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A939E7B81F81DCB200CF8900 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A939E7BA1F81DCB200CF8900 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9B9D10A1F84B22A006894A2 /* ViewSnapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSnapVC.swift; sourceTree = "<group>"; };
 		A9F8B3011F81F2D30049FC82 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A9F8B3031F81F9F50049FC82 /* SnapsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapsVC.swift; sourceTree = "<group>"; };
 		A9F8B3051F81FCFA0049FC82 /* CreateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateVC.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				A9F8B30C1F845C9F0049FC82 /* View Controllers */,
 				A9F8B30B1F845C8D0049FC82 /* Model */,
 				A939E7B21F81DCB200CF8900 /* Main.storyboard */,
+				A9B9D10A1F84B22A006894A2 /* ViewSnapVC.swift */,
 				A939E7B51F81DCB200CF8900 /* Assets.xcassets */,
 				A939E7B71F81DCB200CF8900 /* LaunchScreen.storyboard */,
 				A939E7BA1F81DCB200CF8900 /* Info.plist */,
@@ -247,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A939E7B11F81DCB200CF8900 /* SignInViewController.swift in Sources */,
+				A9B9D10B1F84B22A006894A2 /* ViewSnapVC.swift in Sources */,
 				A939E7AF1F81DCB200CF8900 /* AppDelegate.swift in Sources */,
 				A9F8B30A1F845C4B0049FC82 /* User.swift in Sources */,
 				A9F8B3061F81FCFA0049FC82 /* CreateVC.swift in Sources */,

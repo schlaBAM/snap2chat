@@ -8,7 +8,7 @@
 
 import Foundation
 
-class User{
+class User {
     var email : String!
     var uuid : String!
 }

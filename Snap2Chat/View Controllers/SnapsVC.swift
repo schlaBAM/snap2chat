@@ -20,23 +20,27 @@ class SnapsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        Database.database().reference().child("users").child((Auth.auth().currentUser?.uid)!).child("snaps").observe(DataEventType.childAdded) { (snapshot) in
         
+    Database.database().reference().child("users").child((Auth.auth().currentUser?.uid)!).child("snaps").observe(DataEventType.childAdded) { (snapshot) in
+
             let snap = Snap()
             let value = snapshot.value as? NSDictionary
             snap.imageURL = value?["imageURL"] as? String
             snap.fromUser = value?["fromUser"] as? String
             snap.description = value?["description"] as? String
+            snap.uuid = snapshot.key
 
             self.snaps.append(snap)
             self.tableView.reloadData()
         }
-        
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    Database.database().reference().child("users").child((Auth.auth().currentUser?.uid)!).child("snaps").observe(DataEventType.childRemoved) { (snapshot) in
+            for (index, snap) in self.snaps.enumerated() {
+                if snap.uuid == snapshot.key {
+                    self.snaps.remove(at: index)
+                }
+            }
+            self.tableView.reloadData()
+        }
     }
     
     @IBAction func logoutTapped(_ sender: Any) {
@@ -45,10 +49,24 @@ class SnapsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
+        cell.textLabel?.text = snaps[indexPath.row].fromUser
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users.count
+        return snaps.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let snap = snaps[indexPath.row]
+        performSegue(withIdentifier: "viewSnapSegue", sender: snap)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "viewSnapSegue"{
+            let nextVC = segue.destination as! ViewSnapVC
+            nextVC.snap = sender as! Snap
+        }
     }
 }

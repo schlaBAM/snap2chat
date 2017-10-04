@@ -35,7 +35,7 @@ class SelectUserVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users.count - 1
+        return users.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
@@ -45,10 +45,10 @@ class SelectUserVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let user = users[indexPath.row]
-        let child = Database.database().reference().child("users").child(user.uuid).child("snaps")
-        child.child("description").setValue(snap.description)
-        child.child("imageURL").setValue(snap.imageURL)
-        child.child("fromUser").setValue(Auth.auth().currentUser?.email)
+        let currentSnap = ["description": snap.description, "imageURL" : snap.imageURL, "fromUser" : Auth.auth().currentUser?.email]
+    Database.database().reference().child("users").child(user.uuid).child("snaps").childByAutoId().setValue(currentSnap)
+
+        navigationController?.popToRootViewController(animated: true)
     }
 
 }
