@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseAuth
+import FirebaseStorage
 
 class ViewSnapVC: UIViewController {
 
@@ -33,6 +34,14 @@ class ViewSnapVC: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
     Database.database().reference().child("users").child((Auth.auth().currentUser?.uid)!).child("snaps").child(snap.uuid).removeValue()
+        
+        Storage.storage().reference().child("images").child("\(snap.imageUUID).jpg").delete { (error) in
+            if error != nil {
+                print("Storage deletion error: \(error)")
+            } else {
+                print("Image deleted from storage")
+            }
+        }
         
     }
 }

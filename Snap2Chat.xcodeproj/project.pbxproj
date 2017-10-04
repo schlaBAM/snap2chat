@@ -87,7 +87,6 @@
 				A9F8B30C1F845C9F0049FC82 /* View Controllers */,
 				A9F8B30B1F845C8D0049FC82 /* Model */,
 				A939E7B21F81DCB200CF8900 /* Main.storyboard */,
-				A9B9D10A1F84B22A006894A2 /* ViewSnapVC.swift */,
 				A939E7B51F81DCB200CF8900 /* Assets.xcassets */,
 				A939E7B71F81DCB200CF8900 /* LaunchScreen.storyboard */,
 				A939E7BA1F81DCB200CF8900 /* Info.plist */,
@@ -112,6 +111,7 @@
 				A9F8B3071F8457FD0049FC82 /* SelectUserVC.swift */,
 				A939E7B01F81DCB200CF8900 /* SignInViewController.swift */,
 				A9F8B3031F81F9F50049FC82 /* SnapsVC.swift */,
+				A9B9D10A1F84B22A006894A2 /* ViewSnapVC.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";

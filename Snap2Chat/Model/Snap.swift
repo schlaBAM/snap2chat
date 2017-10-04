@@ -13,4 +13,5 @@ class Snap {
     var description : String?
     var fromUser : String!
     var uuid : String!
+    var imageUUID : String!
 }

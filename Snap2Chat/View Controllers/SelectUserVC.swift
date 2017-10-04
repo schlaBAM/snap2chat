@@ -45,7 +45,7 @@ class SelectUserVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let user = users[indexPath.row]
-        let currentSnap = ["description": snap.description, "imageURL" : snap.imageURL, "fromUser" : Auth.auth().currentUser?.email]
+        let currentSnap = ["description": snap.description, "imageURL" : snap.imageURL, "fromUser" : Auth.auth().currentUser?.email, "imageUUID" : snap.imageUUID]
     Database.database().reference().child("users").child(user.uuid).child("snaps").childByAutoId().setValue(currentSnap)
 
         navigationController?.popToRootViewController(animated: true)

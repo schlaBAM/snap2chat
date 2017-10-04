@@ -19,6 +19,9 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor(red: 239/255, green: 238/255, blue: 148/255, alpha: 1.0) /* #efee94 */
+        emailText.backgroundColor = UIColor(red:0.90, green:0.90, blue:0.90, alpha:1.0)
+        passwordText.backgroundColor = UIColor(red:0.90, green:0.90, blue:0.90, alpha:1.0)
     }
 
     @IBAction func loginTapped(_ sender: Any) {

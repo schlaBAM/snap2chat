@@ -18,10 +18,12 @@ class CreateVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     @IBOutlet weak var imageView: UIImageView!
     
     let imagePicker = UIImagePickerController()
+    var imageUUID = UUID.init().uuidString
     
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
+        createButton.isEnabled = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,17 +33,20 @@ class CreateVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     
     @IBAction func createTapped(_ sender: Any) {
         createButton.isEnabled = false
+        createButton.setTitle("Uploading...", for: .normal)
         let images = Storage.storage().reference().child("images")
         let imageData = UIImageJPEGRepresentation(imageView.image!, 0.1)
-        images.child("\(UUID.init()).jpg").putData(imageData!, metadata: nil) { (metadata, error) in
+        images.child("\(imageUUID).jpg").putData(imageData!, metadata: nil) { (metadata, error) in
             if error != nil {
                 print("Firebase storage upload error: \(error)")
                 self.createButton.isEnabled = true
+                self.createButton.setTitle("Try Again", for: .normal)
             } else {
                 print("Image upload successful")
                 let snap = Snap()
                 snap.description = self.textField.text
                 snap.imageURL = metadata?.downloadURL()?.absoluteString
+                snap.imageUUID = self.imageUUID
                 
                 self.performSegue(withIdentifier: "selectUserSegue", sender: snap)
             }
@@ -60,6 +65,7 @@ class CreateVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         imageView.image = image
         imageView.backgroundColor = .clear
+        createButton.isEnabled = true
         imagePicker.dismiss(animated: true, completion: nil)
         
     }

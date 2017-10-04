@@ -28,6 +28,7 @@ class SnapsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             snap.imageURL = value?["imageURL"] as? String
             snap.fromUser = value?["fromUser"] as? String
             snap.description = value?["description"] as? String
+            snap.imageUUID = value?["imageUUID"] as? String
             snap.uuid = snapshot.key
 
             self.snaps.append(snap)
@@ -49,12 +50,22 @@ class SnapsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = snaps[indexPath.row].fromUser
+        
+        if snaps.count == 0{
+            cell.textLabel?.text = "You have no snaps 😫"
+            cell.textLabel?.textAlignment = .center
+        } else {
+            cell.textLabel?.text = snaps[indexPath.row].fromUser
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return snaps.count
+        if snaps.count == 0{
+            return 1
+        } else {
+            return snaps.count
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
