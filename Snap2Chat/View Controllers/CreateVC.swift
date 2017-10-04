@@ -39,7 +39,11 @@ class CreateVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
                 self.createButton.isEnabled = true
             } else {
                 print("Image upload successful")
-                self.performSegue(withIdentifier: "selectUserSegue", sender: nil)
+                let snap = Snap()
+                snap.description = self.textField.text
+                snap.imageURL = metadata?.downloadURL()?.absoluteString
+                
+                self.performSegue(withIdentifier: "selectUserSegue", sender: snap)
             }
         }
     }
@@ -61,6 +65,8 @@ class CreateVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextVC = segue.destination as! SelectUserVC
+        nextVC.snap = sender as! Snap
         
     }
     

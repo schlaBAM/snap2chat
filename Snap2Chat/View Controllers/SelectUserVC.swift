@@ -8,11 +8,13 @@
 
 import UIKit
 import FirebaseDatabase
+import FirebaseAuth
 
 class SelectUserVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
     @IBOutlet weak var tableView: UITableView!
     var users = [User]()
+    var snap = Snap()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +25,6 @@ class SelectUserVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             let user = User()
             let value = snapshot.value as? NSDictionary
             user.email = value?["email"] as? String 
-//            user.email = snapshot.value!(forKey: "email") as! String
             user.uuid = snapshot.key
             
             self.users.append(user)
@@ -34,7 +35,7 @@ class SelectUserVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users.count
+        return users.count - 1
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
@@ -43,6 +44,11 @@ class SelectUserVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let user = users[indexPath.row]
+        let child = Database.database().reference().child("users").child(user.uuid).child("snaps")
+        child.child("description").setValue(snap.description)
+        child.child("imageURL").setValue(snap.imageURL)
+        child.child("fromUser").setValue(Auth.auth().currentUser?.email)
     }
 
 }

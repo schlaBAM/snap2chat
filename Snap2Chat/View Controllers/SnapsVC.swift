@@ -7,15 +7,31 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseAuth
 
-class SnapsVC: UIViewController {
-
-    let imagePicker = UIImagePickerController()
+class SnapsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var tableView: UITableView!
+    let imagePicker = UIImagePickerController()
+    var snaps = [Snap]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
+        Database.database().reference().child("users").child((Auth.auth().currentUser?.uid)!).child("snaps").observe(DataEventType.childAdded) { (snapshot) in
+        
+            let snap = Snap()
+            let value = snapshot.value as? NSDictionary
+            snap.imageURL = value?["imageURL"] as? String
+            snap.fromUser = value?["fromUser"] as? String
+            snap.description = value?["description"] as? String
 
-        // Do any additional setup after loading the view.
+            self.snaps.append(snap)
+            self.tableView.reloadData()
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,4 +43,12 @@ class SnapsVC: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return users.count
+    }
 }
