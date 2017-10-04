@@ -15,6 +15,8 @@
 		A9F8B3021F81F3F20049FC82 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9F8B3011F81F2D30049FC82 /* GoogleService-Info.plist */; };
 		A9F8B3041F81F9F50049FC82 /* SnapsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F8B3031F81F9F50049FC82 /* SnapsVC.swift */; };
 		A9F8B3061F81FCFA0049FC82 /* CreateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F8B3051F81FCFA0049FC82 /* CreateVC.swift */; };
+		A9F8B3081F8457FD0049FC82 /* SelectUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F8B3071F8457FD0049FC82 /* SelectUserVC.swift */; };
+		A9F8B30A1F845C4B0049FC82 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F8B3091F845C4B0049FC82 /* User.swift */; };
 		B470F0F83EA13BF907E76D5D /* Pods_Snap2Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA67B8B9D5E50567D691F878 /* Pods_Snap2Chat.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +32,8 @@
 		A9F8B3011F81F2D30049FC82 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A9F8B3031F81F9F50049FC82 /* SnapsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapsVC.swift; sourceTree = "<group>"; };
 		A9F8B3051F81FCFA0049FC82 /* CreateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateVC.swift; sourceTree = "<group>"; };
+		A9F8B3071F8457FD0049FC82 /* SelectUserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectUserVC.swift; sourceTree = "<group>"; };
+		A9F8B3091F845C4B0049FC82 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CCD56D0F9A747116B7358505 /* Pods-Snap2Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snap2Chat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Snap2Chat/Pods-Snap2Chat.debug.xcconfig"; sourceTree = "<group>"; };
 		DA67B8B9D5E50567D691F878 /* Pods_Snap2Chat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Snap2Chat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -76,9 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				A939E7AE1F81DCB200CF8900 /* AppDelegate.swift */,
-				A9F8B3051F81FCFA0049FC82 /* CreateVC.swift */,
-				A939E7B01F81DCB200CF8900 /* SignInViewController.swift */,
-				A9F8B3031F81F9F50049FC82 /* SnapsVC.swift */,
+				A9F8B30C1F845C9F0049FC82 /* View Controllers */,
+				A9F8B30B1F845C8D0049FC82 /* Model */,
 				A939E7B21F81DCB200CF8900 /* Main.storyboard */,
 				A939E7B51F81DCB200CF8900 /* Assets.xcassets */,
 				A939E7B71F81DCB200CF8900 /* LaunchScreen.storyboard */,
@@ -86,6 +89,25 @@
 				A9F8B3011F81F2D30049FC82 /* GoogleService-Info.plist */,
 			);
 			path = Snap2Chat;
+			sourceTree = "<group>";
+		};
+		A9F8B30B1F845C8D0049FC82 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A9F8B3091F845C4B0049FC82 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A9F8B30C1F845C9F0049FC82 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A9F8B3051F81FCFA0049FC82 /* CreateVC.swift */,
+				A9F8B3071F8457FD0049FC82 /* SelectUserVC.swift */,
+				A939E7B01F81DCB200CF8900 /* SignInViewController.swift */,
+				A9F8B3031F81F9F50049FC82 /* SnapsVC.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 		D067CBAA0ABEDBF324110375 /* Pods */ = {
@@ -223,7 +245,9 @@
 			files = (
 				A939E7B11F81DCB200CF8900 /* SignInViewController.swift in Sources */,
 				A939E7AF1F81DCB200CF8900 /* AppDelegate.swift in Sources */,
+				A9F8B30A1F845C4B0049FC82 /* User.swift in Sources */,
 				A9F8B3061F81FCFA0049FC82 /* CreateVC.swift in Sources */,
+				A9F8B3081F8457FD0049FC82 /* SelectUserVC.swift in Sources */,
 				A9F8B3041F81F9F50049FC82 /* SnapsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -168,16 +168,33 @@
             </objects>
             <point key="canvasLocation" x="1705" y="134"/>
         </scene>
-        <!--View Controller-->
+        <!--Select User-->
         <scene sceneID="5u4-GI-6I3">
             <objects>
-                <viewController id="ZYZ-dm-P17" sceneMemberID="viewController">
+                <viewController id="ZYZ-dm-P17" customClass="SelectUserVC" customModule="Snap2Chat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ed7-ai-eY6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gve-nc-cYQ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gve-nc-cYQ" firstAttribute="leading" secondItem="8T3-VD-a1C" secondAttribute="leading" id="IOr-ff-hYV"/>
+                            <constraint firstItem="gve-nc-cYQ" firstAttribute="top" secondItem="8T3-VD-a1C" secondAttribute="top" id="L8U-cS-Gjh"/>
+                            <constraint firstItem="8T3-VD-a1C" firstAttribute="bottom" secondItem="gve-nc-cYQ" secondAttribute="bottom" id="dy0-SZ-eDU"/>
+                            <constraint firstItem="gve-nc-cYQ" firstAttribute="centerX" secondItem="ed7-ai-eY6" secondAttribute="centerX" id="pve-e2-9QQ"/>
+                            <constraint firstItem="8T3-VD-a1C" firstAttribute="trailing" secondItem="gve-nc-cYQ" secondAttribute="trailing" id="yaQ-gY-8VG"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8T3-VD-a1C"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Select User" id="LgS-iY-mxa"/>
+                    <connections>
+                        <outlet property="tableView" destination="gve-nc-cYQ" id="Sqw-Vf-YlL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YJw-wr-bLg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
