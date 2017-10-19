@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseStorage
 
-class CreateVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class CreateVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     
     @IBOutlet weak var cameraButton: UIBarButtonItem!
@@ -24,6 +24,7 @@ class CreateVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         super.viewDidLoad()
         imagePicker.delegate = self
         createButton.isEnabled = false
+        textField.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -74,6 +75,11 @@ class CreateVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         let nextVC = segue.destination as! SelectUserVC
         nextVC.snap = sender as! Snap
         
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     
